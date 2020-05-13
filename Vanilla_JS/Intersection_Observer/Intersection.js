@@ -11,7 +11,7 @@ document.querySelectorAll('.container p').forEach(p => {
   // console.log('watching', p.textContent);
 });
 
-function callback(entries, ob) {
+function callback(entries, ob) { //두번째 인자는 observer(IntersectionObserver instance)
   console.log(ob);
   entries.forEach(entry => {
     if(entry.isIntersecting) {
