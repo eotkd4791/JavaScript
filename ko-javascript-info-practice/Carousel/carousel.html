@@ -30,26 +30,23 @@
   <script>
     const [leftButton, rightButton] = document.querySelectorAll('.arrow');
     const ul = document.querySelector('ul');
-    let start = 0;
+    let point = 0;
 
-    class Carousel {
-      constructor() {
-        
-      }
-    }
+    const moveCarousel = () => {
+      ul.style.transform = `translateX(${point}px)`;
+      ul.style.transition = `transform 500ms ease-in-out`;
+    };
 
     leftButton.addEventListener('click', function(e) {
-      if(start === 0) return;
-      start += 130;
-      ul.style.transform = `translateX(${start}px)`;
-      ul.style.transition = `transform 500ms ease-in-out`;
+      if(point === 0) return;
+      point += 130;
+      moveCarousel();
     });
 
     rightButton.addEventListener('click', function(e) {
-      if(start === -910) return;
-      start -= 130;
-      ul.style.transform = `translateX(${start}px)`;
-      ul.style.transition = `transform 500ms ease-in-out`;
+      if(point === -910) return;
+      point -= 130;
+      moveCarousel();
     });
   </script>
 
