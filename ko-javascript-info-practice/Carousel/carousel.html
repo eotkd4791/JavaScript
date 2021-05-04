@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./carousel.css">
+</head>
+
+<body>
+  <div class="container">
+    <button class="arrow">⇦</button>
+    <button class="arrow">⇨</button>
+    
+    <div class="wrapper">      
+      <ul>
+        <li><img src="https://en.js.cx/carousel/1.png"></li>
+        <li><img src="https://en.js.cx/carousel/2.png"></li>
+        <li><img src="https://en.js.cx/carousel/3.png"></li>
+        <li><img src="https://en.js.cx/carousel/4.png"></li>
+        <li><img src="https://en.js.cx/carousel/5.png"></li>
+        <li><img src="https://en.js.cx/carousel/6.png"></li>
+        <li><img src="https://en.js.cx/carousel/7.png"></li>
+        <li><img src="https://en.js.cx/carousel/8.png"></li>
+        <li><img src="https://en.js.cx/carousel/9.png"></li>
+        <li><img src="https://en.js.cx/carousel/10.png"></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script>
+    const [leftButton, rightButton] = document.querySelectorAll('.arrow');
+    const ul = document.querySelector('ul');
+    let start = 0;
+
+    class Carousel {
+      constructor() {
+        
+      }
+    }
+
+    leftButton.addEventListener('click', function(e) {
+      if(start === 0) return;
+      start += 130;
+      ul.style.transform = `translateX(${start}px)`;
+      ul.style.transition = `transform 500ms ease-in-out`;
+    });
+
+    rightButton.addEventListener('click', function(e) {
+      if(start === -910) return;
+      start -= 130;
+      ul.style.transform = `translateX(${start}px)`;
+      ul.style.transition = `transform 500ms ease-in-out`;
+    });
+  </script>
+
+</body>
+</html>
